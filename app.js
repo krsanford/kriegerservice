@@ -18,12 +18,6 @@ app.use(function(req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  if (Object.keys(req.query).length == 0) {
-    res.redirect('/?' + Math.floor(Math.random() * 10000000));
-    return;
-  }
-  console.log(req.query);
-
   function gotHTML(err, resp, html) {
     if (err) return console.error(err);
     var parsedHTML = $.load(html);
